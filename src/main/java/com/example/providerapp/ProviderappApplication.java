@@ -31,10 +31,14 @@ public class ProviderappApplication {
             }
         }
 
+<<<<<<< HEAD
         if (argsJoiner.length() > 0) {
             log.info("Arguments: {}", argsJoiner);
         } else {
             log.info("No arguments provided");
         }
+=======
+        log.info("Arguments: {}", (argsJoiner.length() > 0) ? argsJoiner : "None");
+>>>>>>> 9026e23 (Initial constants and extension methods implemented. Log current args.)
     }
 }
