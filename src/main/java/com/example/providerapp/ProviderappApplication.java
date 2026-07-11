@@ -20,6 +20,7 @@ public class ProviderappApplication {
 
     private static void logArgs(String[] args) {
         StringJoiner argsJoiner = new StringJoiner(ARGS_DELIMITER);
+        argsJoiner.setEmptyValue("None");
 
         if (args != null) {
             for (String arg : args) {
@@ -29,6 +30,6 @@ public class ProviderappApplication {
             }
         }
 
-        log.info("Arguments: {}", (argsJoiner.length() > 0) ? argsJoiner : "None");
+        log.info("Arguments: {}", argsJoiner);
     }
 }

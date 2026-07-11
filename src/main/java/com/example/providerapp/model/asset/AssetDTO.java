@@ -1,4 +1,4 @@
-package com.example.providerapp.model.createasset;
+package com.example.providerapp.model.asset;
 
 import com.example.providerapp.model.ContextDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,22 +15,21 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateAssetDTO {
+public class AssetDTO {
     @Valid
     @NotNull
     @JsonProperty("@context")
-    public ContextDTO context;
+    private ContextDTO context;
 
     @NotBlank
-    @NotNull
     @JsonProperty("@id")
-    public String id;
+    private String id;
 
     @Valid
     @NotNull
-    public PropertiesDTO properties;
+    private PropertiesDTO properties;
 
     @Valid
     @NotNull
-    public DataAddressDTO dataAddress;
+    private DataAddressDTO dataAddress;
 }
