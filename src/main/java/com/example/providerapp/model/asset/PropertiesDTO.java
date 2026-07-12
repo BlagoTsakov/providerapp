@@ -1,5 +1,6 @@
 package com.example.providerapp.model.asset;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,5 +16,6 @@ public class PropertiesDTO {
     private String name;
 
     @NotBlank
-    private String contenttype;
+    @JsonProperty("contenttype")
+    private String contentType;
 }

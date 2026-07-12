@@ -4,7 +4,7 @@ import com.example.providerapp.exception.AssetAlreadyExistsException;
 import com.example.providerapp.model.IdResponseDTO;
 import com.example.providerapp.model.asset.AssetDTO;
 import com.example.providerapp.repository.asset.IAssetRepository;
-import com.example.providerapp.repository.SaveResult;
+import com.example.providerapp.repository.save.SaveResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

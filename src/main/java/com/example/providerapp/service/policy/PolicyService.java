@@ -3,7 +3,7 @@ package com.example.providerapp.service.policy;
 import com.example.providerapp.exception.PolicyAlreadyExistsException;
 import com.example.providerapp.model.IdResponseDTO;
 import com.example.providerapp.model.policy.PolicyDTO;
-import com.example.providerapp.repository.SaveResult;
+import com.example.providerapp.repository.save.SaveResult;
 import com.example.providerapp.repository.policy.IPolicyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

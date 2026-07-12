@@ -17,7 +17,7 @@ public final class AssetMapper {
         return Asset.builder()
                 .id(assetDTO.getId())
                 .name(properties.getName())
-                .contentType(properties.getContenttype())
+                .contentType(properties.getContentType())
                 .baseUrl(dataAddress.getBaseUrl())
                 .proxyPath(dataAddress.getProxyPath())
                 .createdAt(Instant.now())

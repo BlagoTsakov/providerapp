@@ -1,4 +1,4 @@
-package com.example.providerapp.repository;
+package com.example.providerapp.repository.save;
 
 import com.example.providerapp.entity.IEntity;
 

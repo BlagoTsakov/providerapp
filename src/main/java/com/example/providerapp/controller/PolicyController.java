@@ -18,7 +18,7 @@ import static com.example.providerapp.util.Constants.REST_VERSION;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class PolicyController {
+class PolicyController {
     private static final String POLICY_DEFINITIONS = "policydefinitions";
     private static final String POLICY_DEFINITIONS_PATH = "/" + MANAGEMENT + "/" + REST_VERSION + "/" + POLICY_DEFINITIONS;
 

@@ -1,6 +1,5 @@
 package com.example.providerapp.model.policy;
 
-import com.example.providerapp.model.ContextDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Builder
 @Data
@@ -18,18 +17,18 @@ import java.util.ArrayList;
 public class PolicySettingsDTO {
     @NotBlank
     @JsonProperty("@context")
-    public String context;
+    private String context;
 
     @NotNull
-    public ArrayList<String> permission;
+    private List<String> permission;
 
     @NotNull
-    public ArrayList<String> prohibition;
+    private List<String> prohibition;
 
     @NotNull
-    public ArrayList<String> obligation;
+    private List<String> obligation;
 
     @NotBlank
     @JsonProperty("@type")
-    public String type;
+    private String type;
 }

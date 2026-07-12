@@ -1,8 +1,7 @@
 package com.example.providerapp.repository.policy;
 
 import com.example.providerapp.entity.Policy;
-import com.example.providerapp.repository.SaveResult;
+import com.example.providerapp.repository.save.ISaveRepository;
 
-public interface IPolicyRepository {
-    SaveResult save(Policy policy);
+public interface IPolicyRepository extends ISaveRepository<Policy> {
 }

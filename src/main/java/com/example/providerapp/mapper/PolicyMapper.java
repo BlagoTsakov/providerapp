@@ -12,7 +12,7 @@ public final class PolicyMapper {
     public static Policy toPolicy(PolicyDTO policyDTO) {
         return Policy.builder()
                 .id(policyDTO.getId())
-                .type(policyDTO.getPolicySettings().type)
+                .type(policyDTO.getPolicySettings().getType())
                 .createdAt(Instant.now())
                 .build();
     }
