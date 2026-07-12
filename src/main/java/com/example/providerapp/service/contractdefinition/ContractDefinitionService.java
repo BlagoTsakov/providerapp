@@ -10,12 +10,13 @@ import com.example.providerapp.service.policy.IPolicyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 import static com.example.providerapp.mapper.ContractDefinitionMapper.toContractDefinition;
 
 @Service
 @RequiredArgsConstructor
 public class ContractDefinitionService implements IContractDefinitionService {
-    private static final String SERVICE_ID = "ContractDefinition";
     private static final String POLICY = "Policy";
 
     private final IContractDefinitionRepository contractDefinitionRepository;
@@ -28,7 +29,12 @@ public class ContractDefinitionService implements IContractDefinitionService {
         requirePolicyExists(contractDefinitionDTO.getContractPolicyId());
 
         ContractDefinition definition = toContractDefinition(contractDefinitionDTO);
-        return entityCreator.create(contractDefinitionRepository, definition, SERVICE_ID);
+        return entityCreator.create(contractDefinitionRepository, definition, "ContractDefinition");
+    }
+
+    @Override
+    public List<ContractDefinition> findAll() {
+        return contractDefinitionRepository.findAll();
     }
 
     private void requirePolicyExists(String policyId) {

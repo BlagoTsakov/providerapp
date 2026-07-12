@@ -1,11 +1,13 @@
-package com.example.providerapp.repository.save;
+package com.example.providerapp.repository.base;
 
 import com.example.providerapp.entity.IEntity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public abstract class SaveRepository<T extends IEntity> implements ISaveRepository<T> {
+public abstract class BaseInMemoryRepository<T extends IEntity> implements IRepository<T> {
     protected final Map<String, T> savedData = new ConcurrentHashMap<>();
 
     @Override
@@ -18,5 +20,10 @@ public abstract class SaveRepository<T extends IEntity> implements ISaveReposito
         }
 
         return new SaveResult.Saved(entity);
+    }
+
+    @Override
+    public List<T> findAll() {
+        return new ArrayList<>(savedData.values());
     }
 }
