@@ -1,7 +1,6 @@
 package com.example.providerapp.mapper;
 
 import com.example.providerapp.entity.Asset;
-import com.example.providerapp.model.IdResponseDTO;
 import com.example.providerapp.model.asset.AssetDTO;
 import com.example.providerapp.model.asset.DataAddressDTO;
 import com.example.providerapp.model.asset.PropertiesDTO;
@@ -22,13 +21,6 @@ public final class AssetMapper {
                 .baseUrl(dataAddress.getBaseUrl())
                 .proxyPath(dataAddress.getProxyPath())
                 .createdAt(Instant.now())
-                .build();
-    }
-
-    public static IdResponseDTO toIdResponse(Asset asset) {
-        return IdResponseDTO.builder()
-                .id(asset.getId())
-                .createdAt(asset.getCreatedAt().toEpochMilli())
                 .build();
     }
 }

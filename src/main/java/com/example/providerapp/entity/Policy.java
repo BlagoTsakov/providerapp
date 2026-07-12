@@ -9,11 +9,8 @@ import java.time.Instant;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Asset implements IEntity {
+public class Policy implements IEntity {
     private String id;
-    private String name;
-    private String contentType;
-    private String baseUrl;
-    private String proxyPath;
+    private String type;
     private Instant createdAt;
 }

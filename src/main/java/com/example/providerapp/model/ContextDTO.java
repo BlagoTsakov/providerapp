@@ -15,4 +15,6 @@ public class ContextDTO {
     @NotBlank
     @JsonProperty("@vocab")
     private String vocab;
+
+    private String odrl;
 }

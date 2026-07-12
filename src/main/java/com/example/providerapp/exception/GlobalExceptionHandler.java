@@ -14,4 +14,10 @@ public class GlobalExceptionHandler {
     public Map<String, String> alreadyExists(AssetAlreadyExistsException e) {
         return Map.of("error", e.getMessage());
     }
+
+    @ExceptionHandler(PolicyAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> alreadyExists(PolicyAlreadyExistsException e) {
+        return Map.of("error", e.getMessage());
+    }
 }

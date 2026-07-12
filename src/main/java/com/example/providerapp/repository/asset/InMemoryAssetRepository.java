@@ -1,6 +1,7 @@
-package com.example.providerapp.repository;
+package com.example.providerapp.repository.asset;
 
 import com.example.providerapp.entity.Asset;
+import com.example.providerapp.repository.SaveResult;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;

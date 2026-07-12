@@ -1,8 +1,8 @@
 package com.example.providerapp.controller;
 
 import com.example.providerapp.model.IdResponseDTO;
-import com.example.providerapp.model.asset.AssetDTO;
-import com.example.providerapp.service.asset.IAssetService;
+import com.example.providerapp.model.policy.PolicyDTO;
+import com.example.providerapp.service.policy.IPolicyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,16 +18,16 @@ import static com.example.providerapp.util.Constants.REST_VERSION;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-class AssetController {
-    private static final String ASSETS = "assets";
-    private static final String ASSETS_PATH = "/" + MANAGEMENT + "/" + REST_VERSION + "/" + ASSETS;
+public class PolicyController {
+    private static final String POLICY_DEFINITIONS = "policydefinitions";
+    private static final String POLICY_DEFINITIONS_PATH = "/" + MANAGEMENT + "/" + REST_VERSION + "/" + POLICY_DEFINITIONS;
 
-    private final IAssetService assetService;
+    private final IPolicyService policyService;
 
-    @PostMapping(ASSETS_PATH)
-    public ResponseEntity<IdResponseDTO> handlePost(@Validated @RequestBody AssetDTO assetDTO) {
-        log.info("handlePost: ID: {}", assetDTO.getId());
-        IdResponseDTO response = assetService.createAsset(assetDTO);
+    @PostMapping(POLICY_DEFINITIONS_PATH)
+    public ResponseEntity<IdResponseDTO> handlePost(@Validated @RequestBody PolicyDTO policyDTO) {
+        log.info("handlePost: ID: {}", policyDTO.getId());
+        IdResponseDTO response = policyService.createPolicy(policyDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
