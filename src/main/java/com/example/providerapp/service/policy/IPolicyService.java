@@ -5,4 +5,6 @@ import com.example.providerapp.model.policy.PolicyDTO;
 
 public interface IPolicyService {
     IdResponseDTO createPolicy(PolicyDTO policyDTO);
+
+    boolean exists(String policyId);
 }

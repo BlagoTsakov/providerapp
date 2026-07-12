@@ -5,5 +5,5 @@ import com.example.providerapp.repository.save.SaveRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ContractDefinitionRepository extends SaveRepository<ContractDefinition> implements IContractDefinitionRepository {
+public class InMemoryContractDefinitionRepository extends SaveRepository<ContractDefinition> implements IContractDefinitionRepository {
 }

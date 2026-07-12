@@ -14,4 +14,10 @@ public class GlobalExceptionHandler {
     public Map<String, String> alreadyExists(EntityAlreadyExistsException e) {
         return Map.of("error", e.getMessage());
     }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> notFound(EntityNotFoundException e) {
+        return Map.of("error", e.getMessage());
+    }
 }

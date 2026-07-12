@@ -14,6 +14,7 @@ final public class ContractDefinitionMapper {
                 .id(contractDefinitionDTO.getId())
                 .contractPolicyId(contractDefinitionDTO.getContractPolicyId())
                 .accessPolicyId(contractDefinitionDTO.getAccessPolicyId())
+                .assetsSelector(contractDefinitionDTO.getAssetsSelector())
                 .createdAt(Instant.now())
                 .build();
     }

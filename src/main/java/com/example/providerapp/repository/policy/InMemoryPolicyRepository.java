@@ -6,4 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class InMemoryPolicyRepository extends SaveRepository<Policy> implements IPolicyRepository {
+    @Override
+    public boolean exists(String id) {
+        return savedData.containsKey(id);
+    }
 }

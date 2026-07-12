@@ -19,4 +19,9 @@ public class PolicyService implements IPolicyService {
     public IdResponseDTO createPolicy(PolicyDTO dto) {
         return entityCreator.create(policyRepository, toPolicy(dto), "Policy");
     }
+
+    @Override
+    public boolean exists(String policyId) {
+        return policyRepository.exists(policyId);
+    }
 }
