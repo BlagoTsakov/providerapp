@@ -9,15 +9,9 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler(AssetAlreadyExistsException.class)
+    @ExceptionHandler(EntityAlreadyExistsException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
-    public Map<String, String> alreadyExists(AssetAlreadyExistsException e) {
-        return Map.of("error", e.getMessage());
-    }
-
-    @ExceptionHandler(PolicyAlreadyExistsException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public Map<String, String> alreadyExists(PolicyAlreadyExistsException e) {
+    public Map<String, String> alreadyExists(EntityAlreadyExistsException e) {
         return Map.of("error", e.getMessage());
     }
 }
