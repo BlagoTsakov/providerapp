@@ -1,6 +1,6 @@
 package com.example.providerapp.controller;
 
-import com.example.providerapp.model.IdResponseDTO;
+import com.example.providerapp.model.response.ResponseDTO;
 import com.example.providerapp.model.contractdefinition.ContractDefinitionDTO;
 import com.example.providerapp.service.contractdefinition.IContractDefinitionService;
 import lombok.RequiredArgsConstructor;
@@ -25,9 +25,9 @@ public class ContractDefinitionController {
     private final IContractDefinitionService contractDefinitionService;
 
     @PostMapping(CONTRACT_DEFINITIONS_PATH)
-    public ResponseEntity<IdResponseDTO> handlePost(@Validated @RequestBody ContractDefinitionDTO contractDefinitionDTO) {
+    public ResponseEntity<ResponseDTO> handlePost(@Validated @RequestBody ContractDefinitionDTO contractDefinitionDTO) {
         log.info("handlePost: ID: {}", contractDefinitionDTO.getId());
-        IdResponseDTO response = contractDefinitionService.createContractDefinition(contractDefinitionDTO);
+        ResponseDTO response = contractDefinitionService.createContractDefinition(contractDefinitionDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

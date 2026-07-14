@@ -2,7 +2,7 @@ package com.example.providerapp.service.asset;
 
 import com.example.providerapp.component.EntityCreator;
 import com.example.providerapp.entity.Asset;
-import com.example.providerapp.model.IdResponseDTO;
+import com.example.providerapp.model.response.ResponseDTO;
 import com.example.providerapp.model.asset.AssetDTO;
 import com.example.providerapp.repository.asset.IAssetRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,12 +19,17 @@ public class AssetService implements IAssetService {
     private final EntityCreator entityCreator;
 
     @Override
-    public IdResponseDTO createAsset(AssetDTO dto) {
+    public ResponseDTO createAsset(AssetDTO dto) {
         return entityCreator.create(assetRepository, toAsset(dto), "Asset");
     }
 
     @Override
     public List<Asset> findAll() {
         return assetRepository.findAll();
+    }
+
+    @Override
+    public boolean exists(String id) {
+        return assetRepository.findById(id).isPresent();
     }
 }

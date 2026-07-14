@@ -3,7 +3,7 @@ package com.example.providerapp.service.contractdefinition;
 import com.example.providerapp.component.EntityCreator;
 import com.example.providerapp.entity.ContractDefinition;
 import com.example.providerapp.exception.EntityNotFoundException;
-import com.example.providerapp.model.IdResponseDTO;
+import com.example.providerapp.model.response.ResponseDTO;
 import com.example.providerapp.model.contractdefinition.ContractDefinitionDTO;
 import com.example.providerapp.repository.contractdefinition.IContractDefinitionRepository;
 import com.example.providerapp.service.policy.IPolicyService;
@@ -24,7 +24,7 @@ public class ContractDefinitionService implements IContractDefinitionService {
     private final EntityCreator entityCreator;
 
     @Override
-    public IdResponseDTO createContractDefinition(ContractDefinitionDTO contractDefinitionDTO) {
+    public ResponseDTO createContractDefinition(ContractDefinitionDTO contractDefinitionDTO) {
         requirePolicyExists(contractDefinitionDTO.getAccessPolicyId());
         requirePolicyExists(contractDefinitionDTO.getContractPolicyId());
 
@@ -35,6 +35,11 @@ public class ContractDefinitionService implements IContractDefinitionService {
     @Override
     public List<ContractDefinition> findAll() {
         return contractDefinitionRepository.findAll();
+    }
+
+    @Override
+    public boolean exists(String id) {
+        return contractDefinitionRepository.findById(id).isPresent();
     }
 
     private void requirePolicyExists(String policyId) {

@@ -1,6 +1,6 @@
 package com.example.providerapp.model.catalog;
 
-import com.example.providerapp.model.ContextDTO;
+import com.example.providerapp.model.common.ContextDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

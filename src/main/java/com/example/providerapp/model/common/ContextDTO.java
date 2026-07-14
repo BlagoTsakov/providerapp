@@ -1,4 +1,4 @@
-package com.example.providerapp.model;
+package com.example.providerapp.model.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;

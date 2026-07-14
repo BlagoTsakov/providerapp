@@ -1,10 +1,7 @@
-package com.example.providerapp.model.policy;
+package com.example.providerapp.model.contractnegotiation;
 
-import com.example.providerapp.model.common.ContextDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,18 +11,20 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PolicyDTO {
-    @Valid
-    @NotNull
+public class PolicyOfferDTO {
     @JsonProperty("@context")
-    private ContextDTO context;
+    private String context;
 
     @NotBlank
     @JsonProperty("@id")
     private String id;
 
-    @Valid
-    @NotNull
-    @JsonProperty("policy")
-    private PolicySettingsDTO policySettings;
+    @JsonProperty("@type")
+    private String type;
+
+    @NotBlank
+    private String assigner;
+
+    @NotBlank
+    private String target;
 }

@@ -1,4 +1,4 @@
-package com.example.providerapp.model.asset;
+package com.example.providerapp.model.contractnegotiation;
 
 import com.example.providerapp.model.common.ContextDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,26 +10,30 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AssetDTO {
+public class ContractNegotiationRequestDTO {
     @Valid
     @NotNull
     @JsonProperty("@context")
     private ContextDTO context;
 
+    @JsonProperty("@type")
+    private String type;
+
     @NotBlank
-    @JsonProperty("@id")
-    private String id;
+    private String counterPartyId;
+
+    @NotBlank
+    private String counterPartyAddress;
+
+    @NotBlank
+    private String protocol;
 
     @Valid
     @NotNull
-    private PropertiesDTO properties;
-
-    @Valid
-    @NotNull
-    private DataAddressDTO dataAddress;
+    @JsonProperty("policy")
+    private PolicyOfferDTO policy;
 }

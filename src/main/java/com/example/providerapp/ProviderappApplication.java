@@ -3,6 +3,7 @@ package com.example.providerapp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.StringJoiner;
 
@@ -10,6 +11,7 @@ import static com.example.providerapp.util.Constants.ARGS_DELIMITER;
 import static com.example.providerapp.util.Extensions.isNotNullOrBlank;
 
 @Slf4j
+@EnableScheduling
 @SpringBootApplication
 public class ProviderappApplication {
     public static void main(String[] args) {

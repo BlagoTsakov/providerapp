@@ -1,6 +1,6 @@
 package com.example.providerapp.model.contractdefinition;
 
-import com.example.providerapp.model.ContextDTO;
+import com.example.providerapp.model.common.ContextDTO;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;

@@ -1,6 +1,6 @@
 package com.example.providerapp.controller;
 
-import com.example.providerapp.model.IdResponseDTO;
+import com.example.providerapp.model.response.ResponseDTO;
 import com.example.providerapp.model.asset.AssetDTO;
 import com.example.providerapp.service.asset.IAssetService;
 import lombok.RequiredArgsConstructor;
@@ -25,9 +25,9 @@ class AssetController {
     private final IAssetService assetService;
 
     @PostMapping(ASSETS_PATH)
-    public ResponseEntity<IdResponseDTO> handlePost(@Validated @RequestBody AssetDTO assetDTO) {
+    public ResponseEntity<ResponseDTO> handlePost(@Validated @RequestBody AssetDTO assetDTO) {
         log.info("handlePost: ID: {}", assetDTO.getId());
-        IdResponseDTO response = assetService.createAsset(assetDTO);
+        ResponseDTO response = assetService.createAsset(assetDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

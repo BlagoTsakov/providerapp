@@ -1,7 +1,7 @@
 package com.example.providerapp.service.policy;
 
 import com.example.providerapp.component.EntityCreator;
-import com.example.providerapp.model.IdResponseDTO;
+import com.example.providerapp.model.response.ResponseDTO;
 import com.example.providerapp.model.policy.PolicyDTO;
 import com.example.providerapp.repository.policy.IPolicyRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ public class PolicyService implements IPolicyService {
     private final EntityCreator entityCreator;
 
     @Override
-    public IdResponseDTO createPolicy(PolicyDTO dto) {
+    public ResponseDTO createPolicy(PolicyDTO dto) {
         return entityCreator.create(policyRepository, toPolicy(dto), "Policy");
     }
 

@@ -1,6 +1,6 @@
 package com.example.providerapp.controller;
 
-import com.example.providerapp.model.IdResponseDTO;
+import com.example.providerapp.model.response.ResponseDTO;
 import com.example.providerapp.model.policy.PolicyDTO;
 import com.example.providerapp.service.policy.IPolicyService;
 import lombok.RequiredArgsConstructor;
@@ -25,9 +25,9 @@ class PolicyController {
     private final IPolicyService policyService;
 
     @PostMapping(POLICY_DEFINITIONS_PATH)
-    public ResponseEntity<IdResponseDTO> handlePost(@Validated @RequestBody PolicyDTO policyDTO) {
+    public ResponseEntity<ResponseDTO> handlePost(@Validated @RequestBody PolicyDTO policyDTO) {
         log.info("handlePost: ID: {}", policyDTO.getId());
-        IdResponseDTO response = policyService.createPolicy(policyDTO);
+        ResponseDTO response = policyService.createPolicy(policyDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

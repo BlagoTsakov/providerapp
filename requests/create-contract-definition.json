@@ -2,7 +2,7 @@
   "@context": {
     "@vocab": "https://w3id.org/edc/v0.0.1/ns/"
   },
-  "@id": "1",
+  "@id": "aContractDefinition",
   "accessPolicyId": "aPolicy",
   "contractPolicyId": "aPolicy",
   "assetsSelector": []
